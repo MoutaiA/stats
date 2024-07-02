@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "unit-test": "jest ./tests/unit --watch",
+    "test:unit": "jest ./tests/unit --watch",
     "nodemon": "nodemon server.js"
   },
   "author": "",
