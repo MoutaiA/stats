@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const dayjs = require('dayjs');
 
 class Strava {
 	constructor() {
@@ -56,6 +57,28 @@ class Strava {
 			distance,
 			moving_time,
 		};
+	}
+
+	computeRunning(runs) {
+		const { moving_time, distance } = runs.reduce((accumulator, current) => {
+			return {
+				distance: accumulator.distance + current.distance,
+				moving_time: accumulator.moving_time + current.moving_time,
+			};
+		});
+		const result = {
+			distance,
+			moving_time: this.#convertToDate(moving_time),
+		};
+
+		return result;
+	}
+
+	#convertToDate(timeSum) {
+		if (timeSum === 0) {
+			return 0;
+		}
+		return new dayjs(timeSum / 3600).format('HH:MM:ss');
 	}
 }
 
