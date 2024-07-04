@@ -61,16 +61,47 @@ describe('Compute', () => {
 					moving_time: 12299.0,
 				},
 			];
-			const expected = {
-				distance: 458.2,
-				moving_time: 32301.5,
-			};
 			const strava = new Strava();
 
 			const { distance, moving_time } = strava.computeRunning(mockedData);
 
-			expect(distance).toEqual(expected.distance);
-			expect(moving_time).toEqual(`8h58s19`);
+			expect(distance).toEqual(`4.58km`);
+			expect(moving_time).toEqual(`8h58m19s`);
+		});
+
+		test('0 km', () => {
+			const mockedData = [
+				{
+					distance: 0,
+					moving_time: 0,
+				},
+				{
+					distance: 0,
+					moving_time: 0,
+				},
+			];
+			const strava = new Strava();
+
+			const { distance, moving_time } = strava.computeRunning(mockedData);
+
+			expect(distance).toEqual(`0km`);
+			expect(moving_time).toEqual(`No runs this week`);
+		});
+
+		test('Less than an hour', () => {
+			const mockedData = [
+				{
+					moving_time: 300
+				},
+				{
+					moving_time: 2000,
+				},
+			];
+			const strava = new Strava();
+
+			const { distance, moving_time } = strava.computeRunning(mockedData);
+
+			expect(moving_time).toEqual(`38m20s`);
 		});
 	});
 });

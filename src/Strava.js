@@ -66,19 +66,34 @@ class Strava {
 			};
 		});
 		const result = {
-			distance,
+			distance: this.#convertToKM(distance),
 			moving_time: this.#convertToDate(moving_time),
 		};
 
 		return result;
 	}
 
+	#convertToKM(distance) {
+		if (distance <= 0) {
+			return `0km`;
+		}
+		const kms = parseFloat(distance / 100).toFixed(2);
+		return `${kms}km`;
+	}
+
 	#convertToDate(timeSum) {
+		if (timeSum <= 0) {
+			return 'No runs this week';
+		}
 		timeSum = Number(timeSum);
 		const hours = Math.floor(timeSum / 3600);
-		const minutes = Math.floor(timeSum % 3600 / 60);
-		const seconds = Math.floor(timeSum % 3600 % 60);
-		return `${hours}h${minutes}s${seconds}`
+		const minutes = Math.floor((timeSum % 3600) / 60);
+		const seconds = Math.floor((timeSum % 3600) % 60);
+		let date = `${minutes}m${seconds}s`;
+		if (hours > 0) {
+			date = `${hours}h${date}`;
+		}
+		return date;
 	}
 }
 
