@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-const dayjs = require('dayjs');
 
 class Strava {
 	constructor() {
@@ -75,10 +74,11 @@ class Strava {
 	}
 
 	#convertToDate(timeSum) {
-		if (timeSum === 0) {
-			return 0;
-		}
-		return new dayjs(timeSum / 3600).format('HH:MM:ss');
+		timeSum = Number(timeSum);
+		const hours = Math.floor(timeSum / 3600);
+		const minutes = Math.floor(timeSum % 3600 / 60);
+		const seconds = Math.floor(timeSum % 3600 % 60);
+		return `${hours}h${minutes}s${seconds}`
 	}
 }
 

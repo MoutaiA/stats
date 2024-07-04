@@ -47,3 +47,30 @@ describe('Mock getData', () => {
 		});
 	});
 });
+
+describe('Compute', () => {
+	describe('Runs', () => {
+		test('distance', () => {
+			const mockedData = [
+				{
+					distance: 300.5,
+					moving_time: 20000.0,
+				},
+				{
+					distance: 157.7,
+					moving_time: 12299.0,
+				},
+			];
+			const expected = {
+				distance: 458.2,
+				moving_time: 32301.5,
+			};
+			const strava = new Strava();
+
+			const { distance, moving_time } = strava.computeRunning(mockedData);
+
+			expect(distance).toEqual(expected.distance);
+			expect(moving_time).toEqual(`8h58s19`);
+		});
+	});
+});
