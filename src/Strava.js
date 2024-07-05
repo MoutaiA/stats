@@ -20,6 +20,10 @@ class Strava {
 		const URL = encodeURI(`${this.baseUrl}/athlete/activites?before=${before}&after=${after}`);
 		let result = await fetch(URL, this.#getOptions());
 		result = await result.json();
+		if (result?.errors?.length) {
+			const { message } = result;
+			throw new Error(`An error occurred: ${message}`);
+		}
 		return this.#format(result);
 	}
 
@@ -32,6 +36,10 @@ class Strava {
 	}
 
 	#format(data) {
+		if (!data || data.length === 0) {
+			return [];
+		}
+
 		const results = [];
 		for (const el of data) {
 			results.push({
