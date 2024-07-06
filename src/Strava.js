@@ -8,11 +8,11 @@ class Strava {
 
 	async getData() {
 		const before = new Date();
-		// the CRON JOB is run every sunday at night => so we need to get the last 2 weeks activities => today - 14
 		const mondayLastWeek = new Date();
 		const after = mondayLastWeek.setDate(mondayLastWeek.getDate() - 14);
 
 		const activities = await this.getActivities(before, after);
+		// TODO: separate the activities between the weeks
 		return this.#compute(activities);
 	}
 
@@ -63,6 +63,8 @@ class Strava {
 		return {
 			distance,
 			moving_time,
+			//TODO: Improve to create an object: { total, runs, weights }
+			workoutNumber: activities.length,
 		};
 	}
 

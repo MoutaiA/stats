@@ -17,6 +17,7 @@ describe('Mock getData', () => {
 		const expected = {
 			distance: 48607.9,
 			moving_time: 9900,
+			workoutNumber: 2,
 		};
 		const strava = new Strava();
 
@@ -91,7 +92,7 @@ describe('Compute', () => {
 		test('Less than an hour', () => {
 			const mockedData = [
 				{
-					moving_time: 300
+					moving_time: 300,
 				},
 				{
 					moving_time: 2000,
@@ -99,9 +100,39 @@ describe('Compute', () => {
 			];
 			const strava = new Strava();
 
-			const { distance, moving_time } = strava.computeRunning(mockedData);
+			const { moving_time } = strava.computeRunning(mockedData);
 
 			expect(moving_time).toEqual(`38m20s`);
+		});
+
+		test('Should tell the number of workout done in the week', async () => {
+			const mockedData = [
+				{
+					distance: 1000,
+					moving_time: 1000,
+					id: 1000,
+				},
+				{
+					distance: 999,
+					moving_time: 999,
+					id: 999,
+				},
+				{
+					distance: 500,
+					moving_time: 500,
+					id: 500,
+				},
+			];
+			fetch.mockImplementation(() =>
+				Promise.resolve({
+					json: () => Promise.resolve(mockedData),
+				})
+			);
+			const strava = new Strava();
+
+			const { workoutNumber } = await strava.getData();
+
+			expect(workoutNumber).toBe(3);
 		});
 	});
 });
