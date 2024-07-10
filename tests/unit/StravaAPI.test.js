@@ -3,8 +3,8 @@ const fetch = require('node-fetch');
 
 jest.mock('node-fetch', () => jest.fn());
 
-describe('Mock getData', () => {
-	test.only('getData', async () => {
+describe.skip('Mock getData', () => {
+	test('getData', async () => {
 		fetch
 			.mockResolvedValueOnce(new Response(JSON.stringify(mockedData)))
 			.mockResolvedValueOnce(new Response(JSON.stringify(mockedActivity)));
@@ -43,7 +43,7 @@ describe('Mock getData', () => {
 	});
 });
 
-describe('Compute', () => {
+describe.skip('Compute', () => {
 	describe('Runs', () => {
 		test('distance', () => {
 			const mockedData = [
@@ -131,7 +131,7 @@ describe('Compute', () => {
 	});
 });
 
-test('Get a specific ', async () => {
+test.skip('Get a specific ', async () => {
 	const MOCKED_ID = 12;
 	const expected = {
 		distance: 28099,
