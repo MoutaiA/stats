@@ -1,0 +1,142 @@
+{
+	"id": 12345678987654321,
+	"resource_state": 3,
+	"external_id": "garmin_push_12345678987654321",
+	"upload_id": 98765432123456789,
+	"athlete": {
+		"id": 134815,
+		"resource_state": 1
+	},
+	"name": "7K Run",
+	"distance": 7000,
+	"moving_time": 2135,
+	"elapsed_time": 2135,
+	"total_elevation_gain": 70,
+	"type": "Run",
+	"sport_type": "Run",
+	"start_date": "2018-02-16T14:52:54Z",
+	"start_date_local": "2018-02-16T06:52:54Z",
+	"timezone": "(GMT-08:00) America/Los_Angeles",
+	"utc_offset": -28800,
+	"start_latlng": [
+		37.83,
+		-122.26
+	],
+	"end_latlng": [
+		37.83,
+		-122.26
+	],
+	"achievement_count": 0,
+	"kudos_count": 19,
+	"comment_count": 0,
+	"athlete_count": 1,
+	"photo_count": 0,
+	"map": {
+		"id": "a1410355832",
+		"polyline": "ki{eFvqfiVsBmA`Feh@qg@iX`B}JeCcCqGjIq~@kf@cM{KeHeX`@_GdGkSeBiXtB}YuEkPwFyDeAzAe@pC~DfGc@bIOsGmCcEiD~@oBuEkFhBcBmDiEfAVuDiAuD}NnDaNiIlCyDD_CtJKv@wGhD]YyEzBo@g@uKxGmHpCGtEtI~AuLrHkAcAaIvEgH_EaDR_FpBuBg@sNxHqEtHgLoTpIiCzKNr[sB|Es\\`JyObYeMbGsMnPsAfDxAnD}DBu@bCx@{BbEEyAoD`AmChNoQzMoGhOwX|[yIzBeFKg[zAkIdU_LiHxK}HzEh@vM_BtBg@xGzDbCcF~GhArHaIfByAhLsDiJuC?_HbHd@nL_Cz@ZnEkDDy@hHwJLiCbIrNrIvN_EfAjDWlEnEiAfBxDlFkBfBtEfDaAzBvDKdFx@|@XgJmDsHhAgD`GfElEzOwBnYdBxXgGlSc@bGdHpW|HdJztBnhAgFxc@HnCvBdA",
+		"resource_state": 3,
+		"summary_polyline": "ki{eFvqfiVsBmA`Feh@qg@iX`B}JeCcCqGjIq~@kf@cM{KeHeX`@_GdGkSeBiXtB}YuEkPwFyDeAzAe@pC~DfGc@bIOsGmCcEiD~@oBuEkFhBcBmDiEfAVuDiAuD}NnDaNiIlCyDD_CtJKv@wGhD]YyEzBo@g@uKxGmHpCGtEtI~AuLrHkAcAaIvEgH_EaDR_FpBuBg@sNxHqEtHgLoTpIiCzKNr[sB|Es\\`JyObYeMbGsMnPsAfDxAnD}DBu@bCx@{BbEEyAoD`AmChNoQzMoGhOwX|[yIzBeFKg[zAkIdU_LiHxK}HzEh@vM_BtBg@xGzDbCcF~GhArHaIfByAhLsDiJuC?_HbHd@nL_Cz@ZnEkDDy@hHwJLiCbIrNrIvN_EfAjDWlEnEiAfBxDlFkBfBtEfDaAzBvDKdFx@|@XgJmDsHhAgD`GfElEzOwBnYdBxXgGlSc@bGdHpW|HdJztBnhAgFxc@HnCvBdA"
+	},
+	"trainer": false,
+	"commute": false,
+	"manual": false,
+	"private": false,
+	"flagged": false,
+	"gear_id": "b12345678987654321",
+	"from_accepted_tag": false,
+	"average_speed": 3.28,
+	"max_speed": 5.0,
+	"average_cadence": 90,
+	"average_temp": 10,
+	"average_watts": null,
+	"weighted_average_watts": null,
+	"kilojoules": null,
+	"device_watts": false,
+	"has_heartrate": true,
+	"max_watts": null,
+	"elev_high": 100,
+	"elev_low": 50,
+	"pr_count": 0,
+	"total_photo_count": 2,
+	"has_kudoed": false,
+	"workout_type": 10,
+	"suffer_score": null,
+	"description": "",
+	"calories": 530,
+	"segment_efforts": [],
+	"splits_metric": [
+		{
+			"distance": 1000,
+			"elapsed_time": 305,
+			"elevation_difference": 10,
+			"moving_time": 305,
+			"split": 1,
+			"average_speed": 3.28,
+			"pace_zone": 1
+		}
+	],
+	"laps": [
+		{
+			"id": 4479306946,
+			"resource_state": 2,
+			"name": "Lap 1",
+			"activity": {
+				"id": 1410355832,
+				"resource_state": 1
+			},
+			"athlete": {
+				"id": 134815,
+				"resource_state": 1
+			},
+			"elapsed_time": 2135,
+			"moving_time": 2135,
+			"start_date": "2018-02-16T14:52:54Z",
+			"start_date_local": "2018-02-16T06:52:54Z",
+			"distance": 7000,
+			"start_index": 0,
+			"end_index": 2135,
+			"total_elevation_gain": 70,
+			"average_speed": 3.28,
+			"max_speed": 5.0,
+			"average_cadence": 90,
+			"device_watts": false,
+			"average_watts": null,
+			"lap_index": 1,
+			"split": 1
+		}
+	],
+	"gear": {
+		"id": "b12345678987654321",
+		"primary": true,
+		"name": "Running Shoes",
+		"resource_state": 2,
+		"distance": 7000
+	},
+	"partner_brand_tag": null,
+	"photos": {
+		"primary": {
+			"id": null,
+			"unique_id": "3FDGKL3-204E-4867-9E8D-89FC79EAAE17",
+			"urls": {
+				"100": "https://dgtzuqphqg23d.cloudfront.net/Bv93zv5t_mr57v0wXFbY_JyvtucgmU5Ym6N9z_bKeUI-128x96.jpg",
+				"600": "https://dgtzuqphqg23d.cloudfront.net/Bv93zv5t_mr57v0wXFbY_JyvtucgmU5Ym6N9z_bKeUI-768x576.jpg"
+			},
+			"source": 1
+		},
+		"use_primary_photo": true,
+		"count": 2
+	},
+	"highlighted_kudosers": [
+		{
+			"destination_url": "strava://athletes/12345678987654321",
+			"display_name": "Marianne V.",
+			"avatar_url": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/12345678987654321/12345678987654321/3/medium.jpg",
+			"show_name": true
+		}
+	],
+	"hide_from_home": false,
+	"device_name": "Garmin Forerunner 945",
+	"embed_token": "18e4615989b47dd4ff3dc711b0aa4502e4b311a9",
+	"segment_leaderboard_opt_out": false,
+	"leaderboard_opt_out": false
+}

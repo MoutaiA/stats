@@ -1,0 +1,127 @@
+{
+	"id": 12345678987654323,
+	"resource_state": 3,
+	"external_id": "garmin_push_12345678987654323",
+	"upload_id": 98765432123456791,
+	"athlete": {
+		"id": 134815,
+		"resource_state": 1
+	},
+	"name": "15K Run",
+	"distance": 15000,
+	"moving_time": 4631,
+	"elapsed_time": 4631,
+	"total_elevation_gain": 150,
+	"type": "Run",
+	"sport_type": "Run",
+	"start_date": "2024-07-10T09:30:00Z",
+	"start_date_local": "2024-07-10T09:30:00Z",
+	"timezone": "(GMT-08:00) America/Los_Angeles",
+	"utc_offset": -25200,
+	"start_latlng": [
+		37.7749,
+		-122.4194
+	],
+	"end_latlng": [
+		37.7749,
+		-122.4194
+	],
+	"achievement_count": 0,
+	"kudos_count": 0,
+	"comment_count": 0,
+	"athlete_count": 1,
+	"photo_count": 0,
+	"map": {
+		"id": "m12345678987654322",
+		"polyline": "}ugxHvb`iUe@y@eUgU_UcYq_@wR_q@_XWgMnBkNxM_Nd@gNnCsEfGpA}BpCqFz\\g^b@SsRtA}DwAaDoBbCoG|De`@q]g\\yH{@eVlDeIyIwAeLc@yEkAaXbCkOgFmJmDmEjEkKzOaGjKoEhJh@oGuEoLkE{OmFmCoIcDgOeBuHrMkVjIuEvMm@lDfAdDl@|DhB~CpCfGgBfJ{Bp@mMfEsFlHeRlI}DnIkLq\\~IwAdExBtD}D^yA~Dp@yBvE{CnFmL~QwXxQgGxTqYp]eIbFuFmPsAdE|BbD}DBo@pC~@}BtEEwAoDdA}CpNuTzLmHjQwXo]vIsHnBmFQm[zBqJdToLhJ~HmHfEl@pM_BtBg@rGnDdCkCvHhAbHkInByAhLsDiJuC?_HbHd@nL_Cz@ZnEkDDy@hHwJLiCbIrNrIvN_EfAjDWlEnEiAfBxDlFkBfBtEfDaAzBvDKdFx@|@XgJmDsHhAgD`GfElEzOwBnYdBxXgGlSc@bGdHpW|HdJzqBxhAiF`b@DnC~Bd@",
+		"resource_state": 3,
+		"summary_polyline": "}ugxHvb`iUe@y@eUgU_UcYq_@wR_q@_XWgMnBkNxM_Nd@gNnCsEfGpA}BpCqFz\\g^b@SsRtA}DwAaDoBbCoG|De`@q]g\\yH{@eVlDeIyIwAeLc@yEkAaXbCkOgFmJmDmEjEkKzOaGjKoEhJh@oGuEoLkE{OmFmCoIcDgOeBuHrMkVjIuEvMm@lDfAdDl@|DhB~CpCfGgBfJ{Bp@mMfEsFlHeRlI}DnIkLq\\~IwAdExBtD}D^yA~Dp@yBvE{CnFmL~QwXxQgGxTqYp]eIbFuFmPsAdE|BbD}DBo@pC~@}BtEEwAoDdA}CpNuTzLmHjQwXo]vIsHnBmFQm[zBqJdToLhJ~HmHfEl@pM_BtBg@rGnDdCkCvHhAbHkInByAhLsDiJuC?_HbHd@nL_Cz@ZnEkDDy@hHwJLiCbIrNrIvN_EfAjDWlEnEiAfBxDlFkBfBtEfDaAzBvDKdFx@|@XgJmDsHhAgD`GfElEzOwBnYdBxXgGlSc@bGdHpW|HdJzqBxhAiF`b@DnC~Bd@"
+	},
+	"trainer": false,
+	"commute": false,
+	"manual": false,
+	"private": false,
+	"flagged": false,
+	"gear_id": "b12345678987654321",
+	"from_accepted_tag": false,
+	"average_speed": 3.24,
+	"max_speed": 5.0,
+	"average_cadence": 90,
+	"average_temp": 10,
+	"average_watts": null,
+	"weighted_average_watts": null,
+	"kilojoules": null,
+	"device_watts": false,
+	"has_heartrate": true,
+	"max_watts": null,
+	"elev_high": 100,
+	"elev_low": 50,
+	"pr_count": 0,
+	"total_photo_count": 0,
+	"has_kudoed": false,
+	"workout_type": 10,
+	"suffer_score": null,
+	"description": "",
+	"calories": 1119,
+	"segment_efforts": [],
+	"splits_metric": [
+		{
+			"distance": 1000,
+			"elapsed_time": 309,
+			"elevation_difference": 10,
+			"moving_time": 309,
+			"split": 1,
+			"average_speed": 3.24,
+			"pace_zone": 1
+		}
+	],
+	"laps": [
+		{
+			"id": 4479306946,
+			"resource_state": 2,
+			"name": "Lap 1",
+			"activity": {
+				"id": 1410355832,
+				"resource_state": 1
+			},
+			"athlete": {
+				"id": 134815,
+				"resource_state": 1
+			},
+			"elapsed_time": 4631,
+			"moving_time": 4631,
+			"start_date": "2024-07-10T09:30:00Z",
+			"start_date_local": "2024-07-10T09:30:00Z",
+			"distance": 15000,
+			"start_index": 0,
+			"end_index": 4631,
+			"total_elevation_gain": 150,
+			"average_speed": 3.24,
+			"max_speed": 5.0,
+			"average_cadence": 90,
+			"device_watts": false,
+			"average_watts": null,
+			"lap_index": 1,
+			"split": 1
+		}
+	],
+	"gear": {
+		"id": "b12345678987654321",
+		"primary": true,
+		"name": "Running Shoes",
+		"resource_state": 2,
+		"distance": 15000
+	},
+	"partner_brand_tag": null,
+	"photos": {
+		"primary": null,
+		"use_primary_photo": false,
+		"count": 0
+	},
+	"highlighted_kudosers": [],
+	"hide_from_home": false,
+	"device_name": "Garmin Forerunner 945",
+	"embed_token": "18e4615989b47dd4ff3dc711b0aa4502e4b311a9",
+	"segment_leaderboard_opt_out": false,
+	"leaderboard_opt_out": false
+}
