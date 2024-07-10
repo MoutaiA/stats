@@ -1,19 +1,13 @@
-const Strava = require('../../src/Strava');
-const mockData = require('./data/getActivities');
+const StravaAPI = require('../../src/StravaAPI');
 const fetch = require('node-fetch');
 
 jest.mock('node-fetch', () => jest.fn());
 
 describe('Mock getData', () => {
-	beforeAll(() => {
-		fetch.mockImplementation(() =>
-			Promise.resolve({
-				json: () => Promise.resolve(mockData),
-			})
-		);
-	});
-
-	test('getData', async () => {
+	test.only('getData', async () => {
+		fetch
+			.mockResolvedValueOnce(new Response(JSON.stringify(mockedData)))
+			.mockResolvedValueOnce(new Response(JSON.stringify(mockedActivity)));
 		const expected = {
 			distance: 48607.9,
 			moving_time: 9900,
@@ -135,4 +129,17 @@ describe('Compute', () => {
 			expect(workoutNumber).toBe(3);
 		});
 	});
+});
+
+test('Get a specific ', async () => {
+	const MOCKED_ID = 12;
+	const expected = {
+		distance: 28099,
+		moving_time: 4207,
+	};
+	const strava = new Strava();
+
+	const results = await strava.getActivity(MOCKED_ID);
+
+	expect(results).toEqual(expected);
 });

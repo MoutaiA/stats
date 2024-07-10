@@ -12,8 +12,8 @@ class Strava {
 		const after = mondayLastWeek.setDate(mondayLastWeek.getDate() - 14);
 
 		const activities = await this.getActivities(before, after);
-		// TODO: separate the activities between the weeks
-		return this.#compute(activities);
+		const detailedActivities = await this.getDetailsActivities(activities);
+		return this.#compute(this.#format(detailedActivities));
 	}
 
 	async getActivities(before, after) {
@@ -24,7 +24,7 @@ class Strava {
 			const { message } = result;
 			throw new Error(`An error occurred: ${message}`);
 		}
-		return this.#format(result);
+		return result;
 	}
 
 	#getOptions() {
@@ -46,9 +46,29 @@ class Strava {
 				id: el.id,
 				distance: el.distance,
 				moving_time: el.moving_time,
+				calories: el.calories
 			});
 		}
 		return results;
+	}
+
+	async getDetailsActivities(activities) {
+		const results = [];
+		for (const activity of activities) {
+			const detailedActivity = await this.getActivity(activity);
+			results.push(detailedActivity);
+		}
+		return results;
+	}
+
+	async getActivity(id) {
+		const URL = encodeURI(`${this.baseUrl}/activities/${id}`);
+		let activity = await fetch(URL, this.#getOptions());
+		if (!activity) {
+			return {};
+		}
+		activity = await activity.json();
+		return activity;
 	}
 
 	#compute(activities) {
