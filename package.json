@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "test:unit:ci": "jest ./tests/unit",
     "test:unit": "jest ./tests/unit --watch",
     "nodemon": "nodemon server.js"
   },
