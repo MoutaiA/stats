@@ -6,7 +6,7 @@
   "scripts": {
     "test:unit:ci": "jest ./tests/unit",
     "test:unit": "jest ./tests/unit --watch",
-    "nodemon": "DEBUG_MODE=true nodemon server.js"
+    "nodemon": "nodemon --env-file=config/.env server.js"
   },
   "author": "",
   "license": "ISC",

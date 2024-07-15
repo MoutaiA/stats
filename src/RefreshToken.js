@@ -10,7 +10,7 @@ class RefreshToken {
 	 * @returns {void}
 	 */
 	async updateToken() {
-		await this.api.refreshToken();
+		await this.api.getRefreshToken();
 		if (!this.tokenFile.isFile) {
 			this.tokenFile.createFile();
 		}

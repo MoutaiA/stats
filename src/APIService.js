@@ -12,18 +12,8 @@ class APIService {
 		this.refreshTime = refreshTime;
 	}
 
-	/**
-	 * @param {String} accessToken
-	 */
-	set accessToken(accessToken) {
-		this.accessToken = accessToken;
-	}
-
-	/**
-	 * @param {String} refreshToken
-	 */
-	set refreshToken(refreshToken) {
-		this.refreshToken = refreshToken;
+	async refreshToken() {
+		throw new Error('To implement in concrete');
 	}
 }
 
