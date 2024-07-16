@@ -72,6 +72,11 @@ class Strava extends APIService {
 		activity = await activity.json();
 		return activity;
 	}
+
+	static setClientCode(code) {
+		this.code = code;
+		process.env.STRAVA_CODE = code;
+	}
 }
 
 module.exports = Strava;
