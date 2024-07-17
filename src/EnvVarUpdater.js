@@ -1,13 +1,9 @@
 const fs = require('fs-extra');
 
 class TokenFile {
-	constructor(apiName) {
-		this.apiName = apiName;
-		this.filename = `data/${apiName}_TOKEN.json`;
-		this.isFile = fs.pathExistsSync(this.filename);
-	}
+	ensurePath() {
+		// TODO: check if the dir is created, if not create it
 
-	createFile() {
 		console.log('The file did not exists, and has been created');
 		fs.createFileSync(this.filename);
 		const data = JSON.stringify(
@@ -21,7 +17,8 @@ class TokenFile {
 		fs.writeFileSync(this.filename, data);
 	}
 
-	updateToken(accessToken, refreshToken) {
+	write(envVarName, value) {
+		// TODO: rendre modulable pour tous les env var
 		const file = require(`${__dirname}/../${this.filename}`);
 
 		file[`${this.apiName}_ACCESS_TOKEN`] = accessToken;
