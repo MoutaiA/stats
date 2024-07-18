@@ -1,17 +1,37 @@
-const EnvVarUpdater = require('../src/EnvVarUpdater');
+const fs = require('fs-extra');
+
 const RedisClient = require('../src/RedisClient');
 
-const updateEnvironmentVariable = async (envVarName, value) => {
-	const file = EnvVarUpdater();
-	const redisClient = new RedisClient();
+const updateEnvironmentVariable = async (apiName, environmentVariables) => {
+	updateFile(apiName, environmentVariables);
 
-	await file.ensurePath(envVarName);
+	const redisClient = new RedisClient();
 	await redisClient.ensureServerStarted();
 
-	file.write(envVarName, value);
 	redisClient.update(envVarName, value);
 };
 
-module.exports = {
-	updateEnvironmentVariable
+function updateFile(apiName, variables) {
+	const BASE_PATH = `${__dirname}/../data`;
+	const filename = `${apiName.toUpperCase()}_ENVIRONMENT_VARIABLE.json`;
+	const filepath = `${BASE_PATH}/${filename}`;
+
+	fs.ensureFile(filepath)
+		.then(() => {
+			const data = {};
+			for (const [key, value] of Object.entries(variables)) {
+				data[key] = value;
+			}
+
+			const parsedData = JSON.stringify(data, null, 4);
+			return fs.writeFile(filepath, parsedData);
+		})
+		.catch((err) => console.error(`Error while creating file`, err));
 }
+
+
+
+module.exports = {
+	updateEnvironmentVariable,
+	updateFile,
+};

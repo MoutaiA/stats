@@ -14,7 +14,7 @@ app.get('/api/client-id', (req, res) => {
 
 app.get('/exchange_token', (req, res) => {
 	const { code } = req.query;
-	updateEnvironmentVariable('STRAVA_CODE', code)
+	updateEnvironmentVariable('strava', { STRAVA_CODE: code })
 		.then(() => res.end())
 		.catch((err) => {
 			console.error(err);
