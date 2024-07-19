@@ -16,7 +16,8 @@
     "dayjs": "^1.11.11",
     "express": "^4.19.2",
     "fs-extra": "^11.2.0",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "redis": "^4.6.15"
   },
   "devDependencies": {
     "jest": "^29.7.0",

@@ -5,10 +5,13 @@ const RedisClient = require('../src/RedisClient');
 const updateEnvironmentVariable = async (apiName, environmentVariables) => {
 	updateFile(apiName, environmentVariables);
 
-	const redisClient = new RedisClient();
-	await redisClient.ensureServerStarted();
+	const connector = new RedisClient();
+	await connector.init();
+	const client = connector.client;
 
-	redisClient.update(envVarName, value);
+	for (const [key, value] of Object.entries(environmentVariables)) {
+		client.set(key, value);
+	}
 };
 
 function updateFile(apiName, variables) {
@@ -29,9 +32,9 @@ function updateFile(apiName, variables) {
 		.catch((err) => console.error(`Error while creating file`, err));
 }
 
+updateEnvironmentVariable('strong', { 'bench-press': '85kg' });
 
-
-module.exports = {
+/* module.exports = {
 	updateEnvironmentVariable,
 	updateFile,
-};
+}; */
