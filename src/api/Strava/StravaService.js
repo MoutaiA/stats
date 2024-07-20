@@ -1,9 +1,10 @@
 const fetch = require('node-fetch');
-const APIService = require('../APIService');
+const I_API = require('../utils/I_API');
+const StravaModel = require('./StravaModel');
 
 const REFRESH_TOEKEN_TIME_IN_MS = process.env.DEBUG_MODE ? 5000 : 19_800_000;
 
-class Strava extends APIService {
+class Strava extends I_API {
 	constructor() {
 		super('STRAVA', 'https://www.strava.com/api/v3', REFRESH_TOEKEN_TIME_IN_MS);
 		this.clientID = process.env.STRAVA_CLIENT_ID;
@@ -76,6 +77,20 @@ class Strava extends APIService {
 	static setClientCode(code) {
 		this.code = code;
 		process.env.STRAVA_CODE = code;
+	}
+
+	static getClientID() {
+		const client = new StravaModel().credentials;
+		const query = {
+			$match: {
+				apiName: 'strava',
+			},
+		};
+		const projection = {
+			_id: 0,
+			code: 1,
+		};
+		return client.findOne(query, projection);
 	}
 }
 

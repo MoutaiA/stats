@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Service = require('./StravaService');
 
 router.get('/ping', (req, res) => {
 	try {
@@ -11,7 +12,9 @@ router.get('/ping', (req, res) => {
 });
 
 router.get('/client-id', (req, res) => {
-	res.json({ clientID: process.env.STRAVA_CLIENT_ID });
+	Service.getClientID()
+		.then((clientID) => res.status(200).json(clientID))
+		.catch((e) => res.status(500).json({ message: e.message }));
 });
 
 router.get('/exchange_token', (req, res) => {

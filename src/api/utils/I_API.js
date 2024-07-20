@@ -1,9 +1,9 @@
 /**
  * @interface
  */
-class APIService {
+class I_API {
 	constructor(name, baseUrl, refreshTime) {
-		if (new.target === APIService) {
+		if (new.target === I_API) {
 			throw new Error('Cannot instantiate an interface');
 		}
 
@@ -17,4 +17,4 @@ class APIService {
 	}
 }
 
-module.exports = APIService;
+module.exports = I_API;

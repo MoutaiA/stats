@@ -10,6 +10,4 @@ app.use(express.json());
 
 app.use('/api/strava', stravaController);
 
-
-
 module.exports = app;
