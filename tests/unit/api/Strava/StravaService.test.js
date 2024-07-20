@@ -1,4 +1,4 @@
-const StravaAPI = require('../../src/StravaAPI');
+const Service = require('../../../../src/api/Strava/StravaService');
 const fetch = require('node-fetch');
 
 jest.mock('node-fetch', () => jest.fn());

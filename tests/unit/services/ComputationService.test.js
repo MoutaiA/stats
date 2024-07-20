@@ -1,9 +1,9 @@
-const ComputationService = require('../../src/ComputationService');
+const ComputationService = require('../../../src/services/ComputationService');
 const runs = {
-	'5k': require('./data/runs/5k.json'),
-	'7k': require('./data/runs/7k.json'),
-	'10k': require('./data/runs/10k.json'),
-	'15k': require('./data/runs/15k.json'),
+	'5k': require('../data/runs/5k.json'),
+	'7k': require('../data/runs/7k.json'),
+	'10k': require('../data/runs/10k.json'),
+	'15k': require('../data/runs/15k.json'),
 };
 
 describe('Compute runs', () => {

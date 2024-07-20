@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const APIService = require('./APIService');
+const APIService = require('../APIService');
 
 const REFRESH_TOEKEN_TIME_IN_MS = process.env.DEBUG_MODE ? 5000 : 19_800_000;
 
