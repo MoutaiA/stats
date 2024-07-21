@@ -88,7 +88,7 @@ class Strava extends I_API {
 			_id: 0,
 			code: 1,
 		};
-		return strava.findOne(query, projection);
+		return strava.credentials.findOne(query, projection);
 	}
 }
 
