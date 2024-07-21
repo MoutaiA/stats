@@ -79,18 +79,16 @@ class Strava extends I_API {
 		process.env.STRAVA_CODE = code;
 	}
 
-	static getClientID() {
-		const client = new StravaModel().credentials;
+	static async getClientID() {
+		const strava = new StravaModel();
 		const query = {
-			$match: {
-				apiName: 'strava',
-			},
+			apiName: 'strava',
 		};
 		const projection = {
 			_id: 0,
 			code: 1,
 		};
-		return client.findOne(query, projection);
+		return strava.findOne(query, projection);
 	}
 }
 
