@@ -6,4 +6,4 @@ class Strava extends Model {
 	}
 }
 
-module.exports = Strava;
+module.exports = new Strava();

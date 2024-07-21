@@ -19,11 +19,11 @@ router.get('/client-id', (req, res) => {
 
 router.get('/exchange_token', (req, res) => {
 	const { code } = req.query;
-	updateEnvironmentVariable('strava', { STRAVA_CODE: code })
-		.then(() => res.end())
+	Service.updateCredentials({ code })
+		.then((result) => res.status(200).json({ message: result }))
 		.catch((err) => {
 			console.error(err);
-			res.end();
+			return res.status(500).json({ message: err.message });
 		});
 });
 

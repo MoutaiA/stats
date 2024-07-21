@@ -4,7 +4,7 @@ const StravaModel = require('./StravaModel');
 
 const REFRESH_TOEKEN_TIME_IN_MS = process.env.DEBUG_MODE ? 5000 : 19_800_000;
 
-class Strava extends I_API {
+class StravaService extends I_API {
 	constructor() {
 		super('STRAVA', 'https://www.strava.com/api/v3', REFRESH_TOEKEN_TIME_IN_MS);
 		this.clientID = process.env.STRAVA_CLIENT_ID;
@@ -79,8 +79,7 @@ class Strava extends I_API {
 		process.env.STRAVA_CODE = code;
 	}
 
-	static async getClientID() {
-		const strava = new StravaModel();
+	async getClientID() {
 		const query = {
 			apiName: 'strava',
 		};
@@ -88,8 +87,17 @@ class Strava extends I_API {
 			_id: 0,
 			code: 1,
 		};
-		return strava.credentials.findOne(query, projection);
+		return StravaModel.credentials.findOne(query, projection);
+	}
+
+	async updateCredentials(credentials) {
+		const query = { apiName: 'strava' };
+		const update = { $set: {} };
+		for (const [key, value] of Object.entries(credentials)) {
+			update['$set'][key] = value;
+		}
+		return StravaModel.credentials.updateOne(query, update);
 	}
 }
 
-module.exports = Strava;
+module.exports = new StravaService();

@@ -14,21 +14,6 @@ class Model extends EventEmitter {
 		this.credentials = this.db.collection('credentials');
 		this.apiCollection = this.db.collection(collection);
 	}
-
-	async init() {
-		try {
-			// const toto = await this.client.connect();
-			// console.log('IS COL IN DB', 'collection' in this.client.db);
-			// console.log('IS COL IN TOTO', 'collection' in toto);
-			// this.collection = this.client.collection(this.serviceCollection);
-			// console.log(`Connected to MongoDB, collection: ${this.serviceCollection}`);
-			// this.emit('ready');
-			return this;
-		} catch (error) {
-			console.error('Error connecting to MongoDB', error);
-			this.emit('error', error);
-		}
-	}
 }
 
 module.exports = Model;
