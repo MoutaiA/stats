@@ -1,16 +1,17 @@
-const Strava = require('../src/StravaAPI');
-const ComputationService = require('../src/ComputationService');
-const Mialer = require('../src/Mailer');
+const StravaService = require('../src/api/Strava/StravaService');
+const Mailer = require('../src/api/Strava/StravaService');
 
-
-const update = async () => {
-	// TODO: split data update from sending email (next version)
-
-	// const strava = new Strava();
-	// const activities = await strava.getData();
-	// const calculator = new RunningCalculator(activities);
-	// const computedData = calculator.compute(activities);
-	//mailer.send(computedData);
+const sendMail = async () => {
+	const [data] = await StravaService.getMailData();
+	if (!data) {
+		throw new Error('No data provided');
+	}
+	/* 	const mailer = new Mailer();
+	mailer.sendMail(data); */
+	process.exit();
 };
 
-module.exports = update;
+sendMail().catch((e) => {
+	console.error(e);
+	process.exit();
+});

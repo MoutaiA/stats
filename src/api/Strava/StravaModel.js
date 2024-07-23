@@ -1,9 +1,9 @@
 const Model = require('../utils/Model');
 
-class Strava extends Model {
+class StravaModel extends Model {
 	constructor() {
 		super('strava');
 	}
 }
 
-module.exports = new Strava();
+module.exports = new StravaModel();

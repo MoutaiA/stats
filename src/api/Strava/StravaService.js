@@ -98,6 +98,30 @@ class StravaService extends I_API {
 		}
 		return StravaModel.credentials.updateOne(query, update);
 	}
+
+	async getMailData() {
+		const pipeline = [
+			{
+				$sort: {
+					_insertDate: -1,
+				},
+			},
+			{
+				$limit: 1,
+			},
+			{
+				$project: {
+					_id: 0,
+					total_moving_time: 1,
+					total_distance: 1,
+					total_calories: 1,
+					workoutsNumber: 1,
+				},
+			},
+		];
+		const cursor = await StravaModel.apiCollection.aggregate(pipeline);
+		return cursor.toArray();
+	}
 }
 
 module.exports = new StravaService();
