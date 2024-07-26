@@ -122,6 +122,14 @@ class StravaService extends I_API {
 		const cursor = await StravaModel.apiCollection.aggregate(pipeline);
 		return cursor.toArray();
 	}
+
+	insert(data) {
+		if (!data) {
+			console.error('No data provided');
+			return;
+		}
+		return StravaModel.apiCollection.insertOne(data);
+	}
 }
 
 module.exports = new StravaService();
